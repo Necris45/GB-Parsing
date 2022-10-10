@@ -32,6 +32,10 @@ def add_data(all_news, href):
 		date = date.split(",")
 		date[0] = (datetime.datetime.today() - datetime.timedelta(1)).strftime("%d-%m-%Y")
 		letter_data["date"] = ",".join(date)
+	elif "Сегодня" in date:
+		date = date.split(",")
+		date[0] = datetime.datetime.today().strftime("%d-%m-%Y")
+		letter_data["date"] = ",".join(date)
 	else:
 		letter_data["date"] = date
 
