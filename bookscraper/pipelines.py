@@ -25,7 +25,8 @@ class BookscraperPipeline:
         cursor.insert_one(dict(item))
 
     def correct_name(self, item):
-        if item["authors"] is not None:
+        if item["authors"] is not None and ":" in item["name"]:
+
             item["name"] = ":".join(item["name"].split(":")[1:])
 
         if item["name"][0] == " ":
@@ -35,11 +36,11 @@ class BookscraperPipeline:
 
     def correct_authors(self, item):
         if item["authors"] is not None:
-            if len(item["authors"]) != 1:
-                item["authors"] = ", ".join(
-                    list(filter(lambda x: x != ", ", item["authors"])))
-            else:
-                item["authors"] = item["authors"][0]
+            # if len(item["authors"]) != 1:
+            #     item["authors"] = ", ".join(
+            #         list(filter(lambda x: x != ", ", item["authors"])))
+            # else:
+            #     item["authors"] = item["authors"][0]
 
             if item["authors"][0] == " ":
                 item["authors"] = item["authors"][1:]
