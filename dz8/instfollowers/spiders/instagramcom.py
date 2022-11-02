@@ -13,9 +13,10 @@ class InstagramcomSpider(scrapy.Spider):
     allowed_domains = ['instagram.com']
     start_urls = ['https://www.instagram.com/']
     inst_login_link = 'https://www.instagram.com/accounts/login/ajax/'
-    inst_login = 'Onliskill_udm'
+    inst_login = 'necris45'
+    # актуальные данные скрыл
     inst_passwd = '#PWD_INSTAGRAM_BROWSER:10:1651766168:Af1QAEPVT2wMo5ZoBmtI9yaUUSRZ7N2mmqws6aHcVluAGOhHqcHqbcu0wuClcnfkLzdE/wJs5EBFd472ZfAHj83FvVddlWg+HfWctat5Fgiv/q2381qqkGAA7M/6AoWAgqJ8U7sxZhP9Yaijd98='
-    parse_users = ['poker4grig', 'vsy_ksy']
+    parse_users = ['necris45', 'graforlov2007']
     inst_friendships_link = 'https://i.instagram.com/api/v1/friendships'
 
     def parse(self, response: HtmlResponse, **kwargs):
